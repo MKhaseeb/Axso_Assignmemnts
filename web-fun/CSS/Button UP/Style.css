@@ -1,0 +1,25 @@
+.Search{
+    color: lightblue;
+    background: white;
+    border: 1px solid lightblue;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 25px;
+}
+#Plus{
+    color: white;
+    border: 1px solid aqua ;
+    background-color: aqua;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 27px;
+    width: 50px;
+    height: 50px;
+}
+#Acc {
+    color: white;
+    background: blue;
+    border: 2px solid black;
+    font-size: 30px;
+    box-shadow: 0px 4px 6px black;
+}
