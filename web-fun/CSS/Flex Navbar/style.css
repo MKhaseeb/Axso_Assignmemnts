@@ -1,0 +1,40 @@
+.nav {
+    display: flex;
+    background-color: rgb(36, 36, 36);
+
+    
+}
+.nav-title {
+    color: white;
+    display: flex;
+    margin-left: 20px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+}
+.nav-links a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.btn {
+    color: white;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgb(23,162,184,1);
+    border: 3px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 10px;
+}
