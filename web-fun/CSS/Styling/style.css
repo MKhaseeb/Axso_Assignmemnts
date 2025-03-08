@@ -1,37 +1,41 @@
-#Mycloud {
- background-color: black;
- text-align: left;
- font-size: 25px;
- font-family: cursive;
+
+h1 {
+    background-color: black;
+    padding: 10px;
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
 }
+
 .my {
-    color: white;
+    color: rgb(255, 255, 255);
 }
+
 .cloud {
     color: aqua;
 }
 
-#CP {
-    background-color: rebeccapurple;
+h2 {
+    color: whitesmoke;
+    background-color: #663399;
     text-align: center;
-    font-size: 25px;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
-}
-.Completed {
-    color: white;
-
-}
-
-.Projects {
-    color: white;
+    font-size: 40px;
+    padding: 10px;
+    margin: 10px;
 }
 
-#CU {
-    color: black;
-    background-color: lightblue;
-    font-size: 25px;
+.contact-section {
+    background-color: #9fc5f8;
+    padding: 10px;
     text-align: right;
-    text-decoration: underline;
+    margin: 10px;
+}
 
+a {
+    color: darkblue;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
 }
