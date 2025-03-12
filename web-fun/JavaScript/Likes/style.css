@@ -7,8 +7,8 @@ body {
 .all {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 400px;
-    margin-top: -50%;
+    margin-left: 40%;
+    margin-top: -55%;
 }
 
 .box {
