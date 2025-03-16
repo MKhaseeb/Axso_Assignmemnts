@@ -1,0 +1,152 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.width {
+    width: 100%;
+    max-width: 1610px; 
+    margin: 0 auto; 
+}
+
+
+.NavDiv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #9fc5f8;
+    font-weight: bold;
+}
+
+.title {
+    color: white;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.nav-links {
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+}
+
+.nav-links , a {
+    color: white;
+    gap: 100px;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.area {
+    display: flex;
+    justify-content: space-around;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    margin: 0;
+    padding: 5px;
+}
+
+.location {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.temp-text {
+    font-size: 25px;
+    font-weight: 300;
+    margin-left: 33%;
+
+}
+
+select {
+    position: relative;
+    bottom: 60px;
+    margin-left: 89%;
+    margin-top: -25px;
+    padding: 5px;
+}
+
+hr {
+    position: relative;
+    top: -12px;
+    width: 92%;
+    border: 1px solid black;
+}
+.boxs {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1px;
+}
+.Background {
+    background: #eee;
+    width: 320px;
+    height: 500px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+img {
+    border-radius: 150px;
+}
+
+.low {
+    color: red;
+}
+
+.high {
+    color: blue;
+}
+
+.Cookie {
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 3%;
+    justify-content: space-between; 
+    background-color: #eee;
+    border: 2px solid black;
+    width: 95%;
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.Cookieim {
+    
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}
+.Cookie , p {
+    margin-bottom: 5px;
+}
+
+.Cookie , h1 {
+    font-weight: bold;
+}
+.Cookie button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    height: 60px;
+    width: 80px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.clink {
+    color: #25669f;
+    
+}
+.Cookie button:hover {
+    background-color: #2980b9;
+}
