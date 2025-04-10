@@ -1,0 +1,18 @@
+body{
+    margin: 0px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input{
+    width: 10vw;
+    height: 1.5vw;
+}
+
+button{
+    padding: 15px;
+    margin: 53px;
+}
