@@ -1,0 +1,50 @@
+python manage.py makemigrations
+
+python manage.py migrate
+
+
+python manage.py shell
+
+
+>>> from shell.models import Users
+>>> user = Users.objects.create(
+...     FirstName="Mohammad",
+...     LastName="Khaseeb",
+...     EmailAddress="Mkhaseeb84@gmail.com",
+...     Age=18
+... )
+>>> user = Users.objects.create(
+...     FirstName="Ahmad",
+...     LastName="Eid",
+...     EmailAddress="a.d@gmail.com",
+...     Age=20
+... )
+>>> from shell.models import Users
+>>>
+>>> user = Users.objects.create(
+...     FirstName="Khader",
+...     LastName="Tanous",
+...     EmailAddress="k.t@gmail.com",
+...     Age=19
+... )
+>>>
+
+
+all_users = Users.objects.all()
+
+last_user = Users.objects.last()
+
+first_user = Users.objects.first()
+
+
+user = Users.objects.get(id=3)
+user.LastName = "Pancakes"
+user.save()
+
+
+user = Users.objects.get(id=2)
+user.delete()
+
+
+users = Users.objects.all().order_by('FirstName')
+
