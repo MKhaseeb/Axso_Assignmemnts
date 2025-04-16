@@ -27,7 +27,7 @@ class BankAccount:
         return self
     
 
-class user:
+class User:
     def __init__(self,first_name="first",last_name="last",account=[BankAccount()]):
         self.first_name = first_name
         self.last_name = last_name
@@ -41,7 +41,7 @@ class user:
     def get_balance(self,account_num=0):
         return self.account[account_num].balance
 
-    def display_user_balance(self,account_num=0):
+    def display_User_balance(self,account_num=0):
         print(f'{self.first_name}  {self.last_name} - {self.account[account_num].balance} ')
         return self
 
@@ -55,17 +55,19 @@ class user:
         other.balance += amount
         return self
 
-user1 = user("Ahmad", "abed")
+user1 = User("Ahmad", "abed")
 
-user1.display_user_balance().make_deposit(200).display_user_balance()
+user1.display_User_balance().make_deposit(200).display_User_balance()
 
 
 firstaccount=BankAccount(0.05,20000)
 secondaccount=BankAccount(0.05,3333)
 
 
-user2=user("mohammad","khaseeb",[firstaccount,secondaccount])
+user2=User("mohammad","khaseeb",[firstaccount,secondaccount])
 
-user2.display_user_balance().display_user_balance(1)
+user2.display_User_balance().display_User_balance(1)
 
-user2.transfer_money(user2.account[1],10000).display_user_balance().display_user_balance(1)
+user2.transfer_money(user2.account[1],10000).display_User_balance().display_User_balance(1)
+
+
