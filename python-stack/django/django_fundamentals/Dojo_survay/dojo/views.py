@@ -14,12 +14,14 @@ def result(request):
         "fun": request.POST["fun"],
     }
 
+
+
     if "salary" in request.POST:
         data["salary"] = request.POST["salary"]
-        print("im inside")
+        print("im inside if")
     else:
         data["salary"] = False
-        print("im inside 2")
+        print("im inside else")
 
     
     if "costume" in request.POST:

@@ -3,6 +3,7 @@ from django.http import HttpResponse
 import random
 
 
+
 def index(request):
     if 'gold' not in request.session:
         request.session['gold'] = 0
@@ -26,6 +27,10 @@ def gold(request):
             gold = random.randint(-50, 50)
         request.session['gold'] += gold
     return redirect('/')
+
+
+
+
 
 
 

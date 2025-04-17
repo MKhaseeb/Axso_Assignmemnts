@@ -14,7 +14,7 @@ def index(request):
 
 def save(request):
     if request.method == "POST":
-        guess = int(request.POST['res']) 
+        guess = (request.POST['res']) 
         number = request.session['number']
     if guess > number:
         return render(request, 'high.html')
@@ -29,4 +29,6 @@ def save(request):
 
 def test(request):
     return render(request, 'correct.html')
+
+
 
