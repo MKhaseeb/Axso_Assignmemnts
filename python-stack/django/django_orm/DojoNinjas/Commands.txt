@@ -1,0 +1,3 @@
+python manage.py shell
+
+Dojo = Dojo.objects.create(name="Ahmad",city="Nablus",state="NY")
