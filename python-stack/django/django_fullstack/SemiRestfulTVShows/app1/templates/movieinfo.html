@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>info</title>
+</head>
+<body>
+    <h1>All show</h1>
+    <ul>
+        {% for Show in Shows %}
+        <li> {{Show.Title}} - {{Show.Network}} - {{Show.Disc}} - {{Show.Releasdate}} </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
