@@ -11,7 +11,7 @@ def index(request):
 def createShow(request):
     if request.method == "POST":
         Show.addShow(request.POST)
-    return redirect('/')
+    return redirect('/Showinfo')
 
 def Showinfo(request):
     context= {
