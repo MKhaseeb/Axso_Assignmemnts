@@ -19,6 +19,7 @@
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" name="title" id="title" class="form-control rounded-pill" required>
+                
             </div>
 
             <div class="mb-3">
@@ -28,7 +29,7 @@
 
             <div class="mb-3">
                 <label for="releasdate" class="form-label">Release Date</label>
-                <input type="date" name="releasdate" id="releasdate" class="form-control rounded-pill" required>
+                <input type="date" name="releasdate" value="{{Show.releasdate|date:'Y-m-d'}}" id="releasdate" class="form-control rounded-pill" required>
             </div>
 
             <div class="mb-3">

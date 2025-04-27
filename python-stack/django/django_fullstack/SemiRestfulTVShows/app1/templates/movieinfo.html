@@ -27,10 +27,11 @@
         <tr>
             <td>{{ Show.Title }}</td>
             <td>{{ Show.Network }}</td>
-            <td>{{ Show.releasdate }}</td>
+            <td>{{ Show.Releasdate }}</td>
             <td>{{ Show.Disc }}</td>
             <td>
             <div class="d-flex gap-2">
+                <a href="/shows/{{ Show.id }}/show" class="btn btn-sm btn-outline-primary">show</a>
                 <a href="/shows/{{ Show.id }}/edit" class="btn btn-sm btn-outline-primary">Edit</a>
                 <a href="/shows/{{ Show.id }}/delete" class="btn btn-sm btn-outline-danger">Delete</a>
             </div>

@@ -14,3 +14,18 @@ class Show(models.Model):
 
     def allShows():
         return Show.objects.all()
+    
+
+    def deleteinfo(Showid):
+        show=Show.objects.get(id=Showid)
+        show.delete()  
+
+    def edit(post,showid):
+        edit =Show.objects.get(id=showid)
+        # Show.objects.update(Title =Updateid['title'],Network =Updateid['network'],Disc =Updateid['disc'] ,Releasdate =Updateid['releasdate'])
+        # Updateid.save()
+        edit.Title = post['title']
+        edit.Network = post['network']
+        edit.Disc = post['disc']
+        edit.Releasdate = post['releasdate']
+        edit.save()
