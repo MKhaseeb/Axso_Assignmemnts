@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="Regcreate" method="post">
+        {% csrf_token %}
+<div>
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" required>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" required>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" required>
+
+        <label for="passowrd">Passowrd:</label>
+        <input type="password" name="password" required>
+
+        <button>Register</button>
+</div>
+<br>
+<br>
+<br>
+</form>
+<form action="login" method="post">
+    {% csrf_token %}
+<div>
+        <label for="email">Email:</label>
+        <input type="text" name="email" required>
+
+        <label for="passowrd">Passowrd:</label>
+        <input type="password" name="passowrd" required>
+
+        <button type="submit">login</button>
+</div>
+</form>
+{% if messages %}
+<ul class="messages">    
+    {% for message in messages %}    
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+</ul>
+{% endif %}
+</body>
+</html>
