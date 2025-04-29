@@ -21,7 +21,14 @@ def Regcreate(request):
 
 
 def successlogin(request):
-    return render(request,'success.html')
+    if 'userid' in request.session:
+        userid=request.session['userid']
+        context={
+            'user':models.User.objects.get(id=userid)
+        }
+        return render(request,'success.html',context)
+    return redirect("/")
+
 
 # def loginval(request):
 #     email = models.User.objects.filter(email=request.POST['email'])
@@ -35,15 +42,19 @@ def successlogin(request):
     
 
 def loginval(request):
-    email = models.User.objects.filter(email=request.POST['email'])
-    if email:
-        logged_user=email[0]
-        
-    if bcrypt.checkpw(request.POST['password'].encode(),logged_user.password.encode()):
-        request.session['userid'] = logged_user.id
+    email = models.User.objects.filter(email=request.POST['email']).first()
+            
+    if bcrypt.checkpw(request.POST['password'].encode(),email.password.encode()):
+        request.session['userid'] = email.id
+        # request.POST['first_name'] = request.session['userid'] 
         return redirect('/success')
     else:
         return redirect("/")
+
+
+def logout(request):
+    del request.session['userid']
+    return redirect('/')
 
 # def loginval(request):
 #     if request.method == "POST":
