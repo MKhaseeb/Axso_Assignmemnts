@@ -30,23 +30,10 @@ def successlogin(request):
     return redirect("/")
 
 
-# def loginval(request):
-#     email = models.User.objects.filter(email=request.POST['email'])
-#     if email:
-#         logged_user=email[0]
-#     if bcrypt.checkpw( request.POST['password'].encode(), logged_user.password.encode()):
-#         request.session['userid'] = logged_user.id
-#         return redirect('/success')
-#     else:
-#         return redirect("/")
-    
-
 def loginval(request):
     email = models.User.objects.filter(email=request.POST['email']).first()
-            
     if bcrypt.checkpw(request.POST['password'].encode(),email.password.encode()):
         request.session['userid'] = email.id
-        # request.POST['first_name'] = request.session['userid'] 
         return redirect('/success')
     else:
         return redirect("/")
@@ -55,19 +42,3 @@ def loginval(request):
 def logout(request):
     del request.session['userid']
     return redirect('/')
-
-# def loginval(request):
-#     if request.method == "POST":
-#         email_query = models.User.objects.filter(email=request.POST['email'])
-#         if not email_query:
-#             messages.error(request, "Invalid Email or Password")
-#             return redirect('/')
-        
-#         logged_user = email_query[0]
-
-#         if bcrypt.checkpw(request.POST['password'].encode(), logged_user.password.encode()):
-#             request.session['userid'] = logged_user.id
-#             return redirect('/success')
-#         else:
-#             messages.error(request, "Invalid Email or Password")
-#             return redirect('/')

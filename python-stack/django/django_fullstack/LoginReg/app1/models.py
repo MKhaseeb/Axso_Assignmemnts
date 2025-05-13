@@ -29,9 +29,3 @@ def Create_account(postdata):
     password = postdata['password']
     pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()   
     User.objects.create(first_name = postdata['first_name'], last_name = postdata['last_name'], email = postdata['email'], password = pw_hash  )
-    
-
-
-    
-        
-# password =postdata['password']
