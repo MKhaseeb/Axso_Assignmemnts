@@ -18,7 +18,7 @@ public class AlfredQuotes {
         return "it is currently " + sabane5;
     }
     
-    public String respondBeforeAlexis(String conversation) {
+    public String respondBeforeAlexis(String conversation) {    
         String called;
         if (conversation.contains("Alexis")){
             called="Alexis";
