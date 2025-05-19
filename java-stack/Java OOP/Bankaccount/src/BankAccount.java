@@ -16,6 +16,9 @@ public class BankAccount {
         this.savingsBalance = savingsBalance;
         this.accountHolder = accountHolder;
         this.balance = balance;
+
+        accounts++;
+        totalMoney += checkingBalance + savingsBalance;
     }
 
     // GETTERS
@@ -33,16 +36,39 @@ public class BankAccount {
         return totalMoney;
     }
 
+    public double getCheckingBalance() {
+
+        return balance + savingsBalance;
+//        return savingsBalance;
+
+    }
+
+
     // for checking, savings, accounts, and totalMoney
 
     // METHODS
     // deposit
+    public void deposit(double amount) {
+        balance += amount;
+        totalMoney += amount;
+    }
     // - users should be able to deposit money into their checking or savings account
 
     // withdraw
+    public void withdraw(double amount) {
+        if (amount > balance) {
+            System.out.println("Insufficient funds");
+        }
+        balance -= amount;
+        totalMoney -= amount;
+        savingsBalance -= amount;
+    }
     // - users should be able to withdraw money from their checking or savings account
     // - do not allow them to withdraw money if there are insufficient funds
     // - all deposits and withdrawals should affect totalMoney
     // getBalance
+    public double getBalance() {
+        return totalMoney;
+    }
     // - display total balance for checking and savings of a particular bank account
 }

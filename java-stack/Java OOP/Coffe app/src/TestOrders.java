@@ -61,6 +61,16 @@ public class TestOrders {
 
         System.out.println(order1.getStatusMessage());
 
+
+
+        CoffeeKiosk kiosk = new CoffeeKiosk();
+        kiosk.addMenuItem("Mocha", 3.50);
+        kiosk.addMenuItem("Latte", 4.50);
+        kiosk.addMenuItem("Drip Coffee", 5.50);
+        kiosk.addMenuItem("Cappuccino", 6.50);
+
+        kiosk.displayMenu();
+        kiosk.newOrder();
     }
 
 }

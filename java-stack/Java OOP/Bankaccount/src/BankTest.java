@@ -5,10 +5,19 @@ public class BankTest {
         BankAccount bankAccount2 = new BankAccount(2,2000,"Ahmad",5000);
         BankAccount bankAccount3 = new BankAccount(3,3000,"Tareq",5000);
         // Deposit Test
+        bankAccount1.deposit(1000);
+//        bankAccount2.deposit(400);
+//        bankAccount3.deposit(600);
+        System.out.println(bankAccount1.getCheckingBalance());
         // - deposit some money into each bank account's checking or savings account and display the balance each time
+        bankAccount2.deposit(2000);
+        System.out.println(bankAccount2.getCheckingBalance());
         // - each deposit should increase the amount of totalMoney
+        System.out.println(BankAccount.getTotalMoney());
         
         // Withdrawal Test
+        bankAccount3.withdraw(5000);
+        System.out.println(bankAccount3.getCheckingBalance());
         // - withdraw some money from each bank account's checking or savings account and display the remaining balance
         // - each withdrawal should decrease the amount of totalMoney
 
