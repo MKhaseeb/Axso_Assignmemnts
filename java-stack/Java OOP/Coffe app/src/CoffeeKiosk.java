@@ -11,6 +11,41 @@ public class CoffeeKiosk {
 
     public void newOrder(){
 
+        // Shows the user a message prompt and then sets their input to a variable, name
+        System.out.println("Please enter customer name for new order:");
+        String name = System.console().readLine();
+
+        // Your code:
+        Order newOrder = new Order(name);
+
+        // Create a new order with the given input string
+        // Show the user the menu, so they can choose items to add.
+        displayMenu();
+        // Prompts the user to enter an item number
+        System.out.println("Please enter a menu item index or q to quit:");
+        String itemNumber = System.console().readLine();
+
+        orders.add(newOrder);
+
+
+        // Write a while loop to collect all user's order items
+        while(!itemNumber.equals("q")) {
+            int index = Integer.parseInt(itemNumber);
+            Item item = this.menu.get(index);
+            orders.getLast().addItem(item) ;
+            System.out.println(orders.getLast().getItems());
+
+            System.out.println("Item " + item.getName() + " added to the order");
+            System.out.println("Please enter a menu item index or q to quit:");
+            itemNumber = System.console().readLine();
+            // Get the item object from the menu, and add the item to the order
+            // Ask them to enter a new item index or q again, and take their input
+        }
+        // After you have collected their order, print the order details
+
+        orders.getLast().displayOrder();
+
+
     }
 
 
@@ -41,37 +76,37 @@ public class CoffeeKiosk {
         }
     }
 
-    public void newOrder(String mame , double price ) {
-
-        // Shows the user a message prompt and then sets their input to a variable, name
-        System.out.println("Please enter customer name for new order:");
-        String name = System.console().readLine();
-
-        // Your code:
-        Order newOrder = new Order(name);
-
-        // Create a new order with the given input string
-        // Show the user the menu, so they can choose items to add.
-            displayMenu();
-        // Prompts the user to enter an item number
-        System.out.println("Please enter a menu item index or q to quit:");
-        String itemNumber = System.console().readLine();
-
-        // Write a while loop to collect all user's order items
-        while(!itemNumber.equals("q")) {
-            int index = Integer.parseInt(itemNumber);
-            Item item = this.menu.get(index);
-            newOrder.addItem(item);
-
-            System.out.println("Item " + item.getName() + " added to the order");
-            System.out.println("Please enter a menu item index or q to quit:");
-            itemNumber = System.console().readLine();
-            // Get the item object from the menu, and add the item to the order
-            // Ask them to enter a new item index or q again, and take their input
-        }
-        // After you have collected their order, print the order details
-
-    }
+//    public void newOrder(String mame , double price ) {
+//
+//        // Shows the user a message prompt and then sets their input to a variable, name
+//        System.out.println("Please enter customer name for new order:");
+//        String name = System.console().readLine();
+//
+//        // Your code:
+//        Order newOrder = new Order(name);
+//
+//        // Create a new order with the given input string
+//        // Show the user the menu, so they can choose items to add.
+//            displayMenu();
+//        // Prompts the user to enter an item number
+//        System.out.println("Please enter a menu item index or q to quit:");
+//        String itemNumber = System.console().readLine();
+//
+//        // Write a while loop to collect all user's order items
+//        while(!itemNumber.equals("q")) {
+//            int index = Integer.parseInt(itemNumber);
+//            Item item = this.menu.get(index);
+//            newOrder.addItem(item);
+//
+//            System.out.println("Item " + item.getName() + " added to the order");
+//            System.out.println("Please enter a menu item index or q to quit:");
+//            itemNumber = System.console().readLine();
+//            // Get the item object from the menu, and add the item to the order
+//            // Ask them to enter a new item index or q again, and take their input
+//        }
+//        // After you have collected their order, print the order details
+//
+//    }
 
 }
 

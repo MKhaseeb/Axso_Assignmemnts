@@ -55,6 +55,13 @@ public class Order {
 //            System.out.printf("Ready: %s\n", item.isReady());
 //
 //        }
+
+
+    public void displayOrder(){
+        for (Item item : this.items) {
+            System.out.println(item.getName()+": "+item.getPrice());
+        }
+    }
     public String getName() {
         return name;
     }

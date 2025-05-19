@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Bankaccount/Bankaccount.iml" filepath="$PROJECT_DIR$/Bankaccount/Bankaccount.iml" />
       <module fileurl="file://$PROJECT_DIR$/Barista/Barista.iml" filepath="$PROJECT_DIR$/Barista/Barista.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Getters/Getters.iml" filepath="$PROJECT_DIR$/Getters/Getters.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Java OOP.iml" filepath="$PROJECT_DIR$/.idea/Java OOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/Orders/Orders.iml" filepath="$PROJECT_DIR$/Orders/Orders.iml" />
     </modules>
