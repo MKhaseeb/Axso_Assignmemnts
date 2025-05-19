@@ -6,7 +6,7 @@ public class PuzzleJava {
         Random rand = new Random();
         int[] r = new int[10];
         for(int i = 0; i < 10; i++){
-            r[i] = rand.nextInt(10);
+            r[i] = rand.nextInt(20)+1;
         }
         return r;
     }
