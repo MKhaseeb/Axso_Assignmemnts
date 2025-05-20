@@ -5,7 +5,7 @@ public class Main {
        System.out.println("------------Gorilla----------");
         Gorilla g = new Gorilla();
         g.setEnergy(100);
-        g.gorillaEnergy();
+        g.gorillaEnergy(); 
         g.throwSomething();
         g.throwSomething();
         g.throwSomething();
@@ -24,6 +24,8 @@ public class Main {
         t.eatHumans();
 //        t.fly();
         t.batEnergy();
+
+
 
 
     }
