@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Course</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'allimApp/img/favicon.png' %}" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="{% static 'allimApp/img/favicon.png' %}" />
+</head>
+
+<body class="bg-gray-100 font-sans">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-64 bg-[#0f2e52] text-white p-6">
+      <h1 class="text-3xl font-bold mb-8">Allim</h1>
+      <nav class="flex flex-col gap-4">
+        <a href="/teacher/dashboard" class="hover:text-gray-300">Dashboard</a>
+        <a href="/teacher/create_course" class="bg-[#2e5583] p-2 rounded text-white">Create Course</a>
+        <a href="/teacher_profile" class="hover:text-gray-300">Profile</a>
+        <a href="/logout" class="hover:text-gray-300">Logout</a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-8">
+      <h2 class="text-4xl font-bold mb-8">Create a New Course</h2>
+
+      <form action="/create_course" method="POST" enctype="multipart/form-data"
+        class="bg-white p-6 rounded shadow-md max-w-xl">
+        {% csrf_token %}
+
+        <div class="mb-4">
+          <label for="title" class="block text-gray-700 font-semibold mb-2">Course Name</label>
+          <input type="text" id="title" name="title" required
+            class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+        </div>
+
+        <div class="mb-4">
+          <label for="description" class="block text-gray-700 font-semibold mb-2">Description</label>
+          <textarea id="description" name="description" rows="4" required
+            class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400"></textarea>
+        </div>
+
+        <div class="mb-4">
+          <label for="image" class="block text-gray-700 font-semibold mb-2">Course Image (optional)</label>
+          <input type="file" id="image" name="image" class="w-full text-gray-700">
+        </div>
+
+        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+          Create Course
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
