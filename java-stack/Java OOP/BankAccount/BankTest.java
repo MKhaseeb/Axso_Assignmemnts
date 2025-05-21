@@ -13,9 +13,9 @@ public class BankTest {
         bankaccount2.depositToSavings(1000);
         bankaccount3.depositToChecking(1000);
         bankaccount3.depositToSavings(1000);
-        System.out.println("Ahmad your balance is" + bankaccount1.totalMoney());
-        System.out.println("Bahaa your balance is" + bankaccount2.totalMoney());
-        System.out.println("Khaseeb your balance is" + bankaccount3.totalMoney());
+        System.out.println("Ahmad your balance is " + bankaccount1.totalMoney());
+        System.out.println("Bahaa your balance is " + bankaccount2.totalMoney());
+        System.out.println("Khaseeb your balance is " + bankaccount3.totalMoney());
 
         // - each deposit should increase the amount of totalMoney
 
@@ -25,9 +25,9 @@ public class BankTest {
         bankaccount3.withdrawFromChecking(600);
         // - withdraw some money from each bank account's checking or savings account
         // and display the remaining balance
-        System.out.println("Ahmad your balance is" + bankaccount1.totalMoney());
-        System.out.println("Bahaa your balance is" + bankaccount2.totalMoney());
-        System.out.println("Khaseeb your balance is" + bankaccount3.totalMoney());
+        System.out.println("Ahmad your balance is " + bankaccount1.totalMoney());
+        System.out.println("Bahaa your balance is " + bankaccount2.totalMoney());
+        System.out.println("Khaseeb your balance is " + bankaccount3.totalMoney());
         // - each withdrawal should decrease the amount of totalMoney
 
         // Static Test (print the number of bank accounts and the totalMoney)
