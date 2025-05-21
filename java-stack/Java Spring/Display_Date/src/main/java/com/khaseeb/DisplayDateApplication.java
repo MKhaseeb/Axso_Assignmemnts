@@ -33,9 +33,6 @@ public class DisplayDateApplication {
 
 	@RequestMapping("time")
 	public String time(Model model) {
-		String pattern = "MM-dd-yyyy";
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-		model.addAttribute("date", simpleDateFormat);
 		return "time.jsp";
 		
 	}
