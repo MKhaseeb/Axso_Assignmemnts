@@ -19,4 +19,6 @@ public class Bat extends Mammal {
         energy = energy - 100;
         System.out.println("The bat attacked town. Bat's energy: " + energy);
     }
+
+
 }
