@@ -1,7 +1,5 @@
 public class Panting extends Art {
-    public String Oil;
-    public String Acrylic;
-    public String WaterColor;
+    public String paintType;
     @Override
     public void viewArt() {
 
