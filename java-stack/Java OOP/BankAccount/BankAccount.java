@@ -85,6 +85,13 @@ public class BankAccount {
     // - all deposits and withdrawals should affect totalMoney
     // getBalance
     // - display total balance for checking and savings of a particular bank account
+
+
+
+    
+
+
+
 }
 
 
