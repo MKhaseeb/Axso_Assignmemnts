@@ -18,7 +18,7 @@
     <div class="container">
         <div class="areas">
             <form action="counter" method="post">
-                <input type="hidden" name="Farm" value="Farm">
+                <input type="hidden" name="Farm">
                 <h1>Farm</h1>
                 <h2>(earns 10-20 gold)</h2>
                 <button type="submit">Find Gold</button>
@@ -35,7 +35,7 @@
 
         <div class="areas">
             <form action="counter" method="post">
-                <input type="hidden" name="House" value="House">
+                <input type="hidden" name="House">
                 <h1>House</h1>
                 <h2>(earns 10-20 gold)</h2>
                 <button type="submit">Find Gold</button>
@@ -44,21 +44,13 @@
 
         <div class="areas">
             <form action="counter" method="post">
-                <input type="hidden" name="Quest" value="Quest">
+                <input type="hidden" name="Quest">
                 <h1>Quest</h1>
                 <h2>(earns/takes 0-50 gold)</h2>
                 <button type="submit">Find Gold</button>
             </form>
         </div>
     </div>
-    <div>
-  <h3>Activities:</h3>
-  <div style="height: 200px; overflow-y: scroll; border: 1px solid #ccc;">
-    <c:forEach var="log" items="${sessionScope.log}">
-      <p style="color: ${log.contains('lost') ? 'red' : 'green'}">${log}</p>
-    </c:forEach>
-  </div>
-</div>
 	
 </body>
 </html>

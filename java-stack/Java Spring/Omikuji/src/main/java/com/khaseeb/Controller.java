@@ -1,6 +1,7 @@
 package com.khaseeb;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

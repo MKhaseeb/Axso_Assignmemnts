@@ -16,7 +16,7 @@ def index(request):
 def gold(request):
     if request.method == "POST":
         gold = 0
-        location  = request.POST['location']
+        go  = request.POST['location']
         if location == 'Farm':
             gold = random.randint(10, 20)
         if location == 'Cave':
