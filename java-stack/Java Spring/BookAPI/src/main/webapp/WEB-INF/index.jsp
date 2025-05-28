@@ -15,6 +15,7 @@
             <th>ID</th>
             <th>Title</th>
             <th>Language</th>
+            <th>description</th>
             <th>Number of Pages</th>
         </tr>
     </thead>
@@ -24,11 +25,31 @@
             <td><c:out value="${books.id}" /></td>
                 <td><c:out value="${books.title}" /></td>
                 <td><c:out value="${books.language}" /></td>
+                <td><c:out value="${books.description}" /></td>
                 <td><c:out value="${books.numberOfPages}" /></td>
             </tr>
         </c:forEach>
     </tbody>
 </table>
+
+    <form action="/new" method="post">
+
+
+        <label for="title">Title: </label>
+        <input type="text" name="title" value="title">
+
+        <label for="language">Language: </label>
+        <input type="text" name="language" value="language">
+
+        <label for="description">Description: </label>
+        <input type="text" name="description" value="description">
+
+
+        <label for="numberOfPages">Pages: </label>
+        <input type="number" name="pages" value="numberOfPages">
+        
+        <button type="submit">Submit</button>
+    </form>
 
 </body>
 </html>
