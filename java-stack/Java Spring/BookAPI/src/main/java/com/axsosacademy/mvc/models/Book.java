@@ -1,6 +1,7 @@
 package com.axsosacademy.mvc.models;
 import java.util.Date;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,7 +39,12 @@ public class Book {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
-    public Book(String title, String desc, String lang, int pages) {
+    
+    
+    public Book() {
+	}
+
+	public Book(String title, String desc, String lang, int pages) {
         this.title = title;
         this.description = desc;
         this.language = lang;

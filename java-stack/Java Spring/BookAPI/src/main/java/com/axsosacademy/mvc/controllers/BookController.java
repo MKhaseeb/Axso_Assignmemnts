@@ -1,6 +1,7 @@
 package com.axsosacademy.mvc.controllers;
 import java.util.List;
 
+
 import java.lang.ProcessBuilder.Redirect;
 import java.util.ArrayList;
 
@@ -34,47 +35,47 @@ public class BookController {
     }
 
 	
-    @RequestMapping("/api/books/{id}")
-    public String show(HttpSession session,Model model,@PathVariable("id")
-//    @RequestParam(value="title") String title,
-//    @RequestParam(value="description") String desc,
-//    @RequestParam(value="language") String lang, @RequestParam(value="pages") Integer numOfPages,
-    Long id) {
-        Book book = bookService.findBook(id);
-        ArrayList<Item> books = new ArrayList<Item>();
-//        session.setAttribute("title",title );
-        model.addAttribute("book", book);
-        
-        return "show.jsp";
-    }
+//    @RequestMapping("/api/books/{id}")
+//    public String show(HttpSession session,Model model,@PathVariable("id")
+////    @RequestParam(value="title") String title,
+////    @RequestParam(value="description") String desc,
+////    @RequestParam(value="language") String lang, @RequestParam(value="pages") Integer numOfPages,
+//    Long id) {
+//        Book book = bookService.findBook(id);
+//        ArrayList<Item> books = new ArrayList<Item>();
+////        session.setAttribute("title",title );
+//        model.addAttribute("book", book);
+//
+//        return "show.jsp";
+//    }
     
-    @RequestMapping("/books")
-    public String index(Model model) {
-        List<Book> books = bookService.allBooks();
-        model.addAttribute("books", books);
-        return "index.jsp";
-    }
+//    @RequestMapping("/books")
+//    public String index(Model model) {
+//        List<Book> books = bookService.allBooks();
+//        model.addAttribute("books", books);
+//        return "index.jsp";
+//    }
     
     
 //    @GetMapping("/newbook")
     
     
-    @PostMapping("/new")
-    public String newBook(HttpSession session,
-    	    @RequestParam("title") String title,
-    	    @RequestParam("description") String description,
-    	    @RequestParam("language") String language,
-    	    @RequestParam("pages") Integer pages) {
-//    	session.setAttribute("title",title );
-//    	session.setAttribute("description",description );
-//    	Integer pagess = (Integer) session.getAttribute("pages");
-//    	session.setAttribute("language",language );
-//    	session.setAttribute("pages",pages );
-    	 Book book = new Book(title, description, language, pages);
-    	 bookService.createBook(book);
-    	 
-    	 return "redirect:/books";
-    }
+//    @PostMapping("/new")
+//    public String newBook(HttpSession session,
+//    	    @RequestParam("title") String title,
+//    	    @RequestParam("description") String description,
+//    	    @RequestParam("language") String language,
+//    	    @RequestParam("pages") Integer pages) {
+////    	session.setAttribute("title",title );
+////    	session.setAttribute("description",description );
+////    	Integer pagess = (Integer) session.getAttribute("pages");
+////    	session.setAttribute("language",language );
+////    	session.setAttribute("pages",pages );
+//    	 Book book = new Book(title, description, language, pages);
+//    	 bookService.createBook(book);
+//    	 
+//    	 return "redirect:/books";
+//    }
     
     @GetMapping("/books/new")
     public String newBook(@ModelAttribute("book") Book book) {
