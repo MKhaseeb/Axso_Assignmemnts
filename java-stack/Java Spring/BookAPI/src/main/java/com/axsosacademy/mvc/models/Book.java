@@ -1,6 +1,7 @@
 package com.axsosacademy.mvc.models;
 import java.util.Date;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,16 +21,16 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    @Size(min = 5, max = 200)
+    @Size(min = 5, max = 200, message="Language must be at least 5 characters.")
     private String title;
     @NotNull
-    @Size(min = 5, max = 200)
+    @Size(min = 5, max = 200, message="Language must be at least 5 characters.")
     private String description;
     @NotNull
-    @Size(min = 3, max = 40)
+    @Size(min = 3, max = 40, message="Language must be at least 3 characters.")
     private String language;
     @NotNull
-    @Min(100)
+    @Min(value = 100, message="Must be at least 100 pages.")
     private Integer numberOfPages;
     // This will not allow the createdAt column to be updated after creation
     @Column(updatable=false)
@@ -38,9 +39,12 @@ public class Book {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
+    
+    
     public Book() {
-    }
-    public Book(String title, String desc, String lang, int pages) {
+	}
+
+	public Book(String title, String desc, String lang, int pages) {
         this.title = title;
         this.description = desc;
         this.language = lang;
