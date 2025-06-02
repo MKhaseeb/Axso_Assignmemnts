@@ -2,10 +2,11 @@ package com.axsosacademy.mvc.services;
 
 import java.util.List;
 
+
 import org.springframework.stereotype.Service;
 
 import com.axsosacademy.mvc.models.Dojo;
-import com.axsosacademy.mvc.models.Travel;
+import com.axsosacademy.mvc.models.Ninja;
 import com.axsosacademy.mvc.repositories.DojoRepository;
 
 @Service
@@ -14,9 +15,9 @@ public class DojoService  {
     public DojoService(DojoRepository dojoRepository) {
         this.dojoRepository = dojoRepository;
     }
-//    public Dojo findbyid(long dojo_id) {
-//        return dojoRepository.findById(dojo_id).orElse(null);
-//    }
+    public Dojo findbyid(long dojo_id) {
+        return dojoRepository.findById(dojo_id).orElse(null);
+    }
     
     public List<Dojo> allDojos() {
         return dojoRepository.findAll();
@@ -25,6 +26,9 @@ public class DojoService  {
     public Dojo createDojo(Dojo dojo) {
         return dojoRepository.save(dojo);
     }
+    
+
+    
     
     
 }

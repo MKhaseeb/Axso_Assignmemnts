@@ -2,6 +2,7 @@ package com.axsosacademy.mvc.controllers;
 
 import java.util.List;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.axsosacademy.mvc.models.Dojo;
-import com.axsosacademy.mvc.models.Travel;
 import com.axsosacademy.mvc.repositories.DojoRepository;
 import com.axsosacademy.mvc.services.DojoService;
 
@@ -41,7 +41,10 @@ public class DojoController {
         	dojoService.createDojo(dojo);
             return "redirect:/dojo";
         }
+  
     }
+    
+
 //    @GetMapping("/dojo/{dojo_id}")
 //    public String showDojo(@PathVariable Long dojo_id, Model model) {
 //        

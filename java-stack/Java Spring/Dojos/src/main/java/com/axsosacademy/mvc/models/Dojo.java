@@ -19,7 +19,6 @@ public class Dojo {
     @Size(min = 1, max = 255, message = "Name is required")
     private String name;
 
-    @NotNull
     @Column(updatable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createdAt;

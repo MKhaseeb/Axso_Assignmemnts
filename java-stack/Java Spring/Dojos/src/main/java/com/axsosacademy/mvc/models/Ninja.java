@@ -66,6 +66,18 @@ public class Ninja {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	
+
+	public String getFisrtname() {
+		return fisrtname;
+	}
+
+
+	public void setFisrtname(String fisrtname) {
+		this.fisrtname = fisrtname;
+	}
+
 
 	public String getLastname() {
 		return lastname;
