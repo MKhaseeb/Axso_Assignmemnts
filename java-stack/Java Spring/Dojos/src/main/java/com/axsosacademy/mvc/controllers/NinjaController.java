@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.axsosacademy.mvc.models.Dojo;
 import com.axsosacademy.mvc.models.Ninja;
-import com.axsosacademy.mvc.services.NinjaService;
 import com.axsosacademy.mvc.services.DojoService;
+import com.axsosacademy.mvc.services.NinjaService;
 
 import jakarta.validation.Valid;
 
@@ -43,15 +43,15 @@ public class NinjaController {
 //        return "createninja.jsp"; 
 //    }
     
-    @PostMapping("/dojos/{dojo_id}/ninjas/new")
-    public String form(@PathVariable("dojo_id") Long id,@Valid @ModelAttribute("ninja") Ninja ninja, BindingResult result, Model model) {
+    @PostMapping("/dojos/ninjas/new")
+    public String form(@Valid @ModelAttribute("ninja") Ninja ninja, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            model.addAttribute("dojo", dojoService.findbyid(id));
+//            model.addAttribute("dojo", dojoService.findbyid(id));
               return "createninja.jsp";
           } else {
         	  ninjaService.createNinja(ninja);
-              Dojo dojo = dojoService.findbyid(id);
-              ninja.setDojo(dojo);
+//              Dojo dojo = dojoService.findbyid(id);
+//              ninja.setDojo(dojo);
               return "redirect:/dojo";
     }
     

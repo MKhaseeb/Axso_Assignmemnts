@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="card-body">
-				<form:form action="/dojos/${id}/ninjas/new" method="post"
+				<form:form action="/dojos/ninjas/new" method="post"
 					modelAttribute="ninja">
 					<div class="mb-3">
 						<form:label path="fisrtname" cssClass="form-label">Firstname: </form:label>
@@ -32,7 +32,7 @@
 					<div class="mb-3">
 					<form:label path="dojo">Select Dojo:</form:label>
 					<form:select path="dojo" cssClass="form-control">
-   					<form:options items="${dojos}" itemValue="id" itemLabel="name"/>
+   						<form:options items="${dojos}" itemValue="id" itemLabel="name"/>
 					</form:select>
 					<form:errors path="dojo" cssClass="text-danger" />
    					 </div>

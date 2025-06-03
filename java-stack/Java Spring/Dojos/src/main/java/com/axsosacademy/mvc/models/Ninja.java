@@ -26,7 +26,7 @@ public class Ninja {
     @Min(0)
     private Integer age;
 
-    @NotNull
+    
     @Column(updatable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createdAt;
