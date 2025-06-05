@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.axsosacademy.mvc.models.Dojo;
-import com.axsosacademy.mvc.models.Ninja;
 import com.axsosacademy.mvc.repositories.DojoRepository;
 
 @Service

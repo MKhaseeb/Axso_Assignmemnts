@@ -2,6 +2,7 @@ package com.axsosacademy.mvc.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,13 +20,17 @@ import jakarta.validation.Valid;
 
 @Controller
 public class NinjaController {
-    private final NinjaService ninjaService;
-    private final DojoService dojoService;
-    public NinjaController(NinjaService ninjaService, DojoService dojoService) {
-        this.ninjaService = ninjaService;
-        this.dojoService = dojoService;
-    }
+//    private final NinjaService ninjaService;
+//    private final DojoService dojoService;
+//    public NinjaController(NinjaService ninjaService, DojoService dojoService) {
+//        this.ninjaService = ninjaService;
+//        this.dojoService = dojoService;
+//    }
     
+    @Autowired
+      NinjaService ninjaService;
+    @Autowired
+    DojoService dojoService;
     	
     @GetMapping("/ninja")
     public String ninja(@ModelAttribute("ninja") Ninja ninja, Model model) {
