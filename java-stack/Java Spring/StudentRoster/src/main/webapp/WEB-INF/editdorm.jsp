@@ -18,19 +18,19 @@
             <th>Action</th>
         </tr>
     </thead>
-    				<form:form action="/dorm/student/neww" method="post"
-					modelAttribute="studentt">
-					<div class="mb-3">
-					<form:label path="dorm">Select Name:</form:label>
-					<form:select path="dorm" cssClass="form-control">
-   						<form:options items="${students}" itemValue="id" itemLabel="name"/>
-					</form:select>
-					<form:errors path="dorm" cssClass="text-danger" />
-   					 </div>
-					<div class="d-grid">
-						<input type="submit" value="Submit" class="btn btn-primary" />
-					</div>
-				</form:form>
+ <form:form action="/dorm/${dorms.id}/add-student" method="post" modelAttribute="studentt">
+    <div class="mb-3">
+        <form:label path="id">Select Student:</form:label>
+        <form:select path="id" cssClass="form-control">
+            <form:options items="${students}" itemValue="id" itemLabel="name"/>
+        </form:select>
+        <form:errors path="id" cssClass="text-danger" />
+    </div>
+    <div class="d-grid">
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    </div>
+</form:form>
+
     <tbody>
         <c:forEach var="std" items="${dorms.student}">
             <tr>

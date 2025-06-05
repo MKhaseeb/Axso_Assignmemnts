@@ -33,7 +33,7 @@ public class StudentService {
 		return studentRepository.save(student1);
 	}
 	
-	public Student addStudenttoDorm()lo
+//	public Student addStudenttoDorm()
 //	public Book updateBook(Long id, String title, String desc, String lang, Integer numOfPages) {
 //		Book book = bookRepository.findById(id).orElse(null);
 //		book.setTitle(title);

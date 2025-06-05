@@ -66,16 +66,13 @@ public class StudentController {
         return "editdorm.jsp";
     }
     
-    @PostMapping("/dorm/student/neww")
-    public String formmm(@Valid @ModelAttribute("studentt") Student student, BindingResult result, Model model) {
-        if (result.hasErrors()) {
-        	System.out.println("i'm in");
-              return "editdorm.jsp";
-          } else {
-        	  System.out.println("i'm in in");
-        	  studentService.createStudent(student);
-              return "redirect:/dorm/{id}";
-    }
+    @PostMapping("/dorm/{id}/add-student")
+    public String addStudentToDorm(@PathVariable("id") Long dormId, @ModelAttribute("studentt") Student student, Model model) {
+        Dorm dorm = dormService.findbyid(dormId);
+        Student student1 = studentService.findbyid(student.getId());
+        student1.setDorm(dorm);
+        studentService.createStudent(student1);
+        return "redirect:/dorm/" + dormId;
     }
     
     @DeleteMapping("/dorm/{dorm_id}/delete")
