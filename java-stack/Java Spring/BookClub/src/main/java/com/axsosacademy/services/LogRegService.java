@@ -1,20 +1,18 @@
-package com.axsos.academy.services;
+package com.axsosacademy.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-
+import java.util.List;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
-    
-import  com.axsos.academy.models.LoginUser;
-import  com.axsos.academy.models.User;    
 
-import org.springframework.stereotype.Service;
-import com.axsos.academy.repositories.LogRegRepository;
+import com.axsosacademy.models.Book;
+import com.axsosacademy.models.LoginUser;
+import com.axsosacademy.models.User;
+import com.axsosacademy.repositories.LogRegRepository;
+
 
 @Service
 public class LogRegService {
@@ -73,5 +71,9 @@ public class LogRegService {
 	    Optional<User> user = logRegRepository.findById(id);
 	    return user.orElse(null);
 	}
+	
+    public List<User> allUser() {
+        return logRegRepository.findAll();
+    }
 
 }

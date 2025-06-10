@@ -1,4 +1,5 @@
-package com.axsos.academy.models;
+package com.axsosacademy.models;
+
 import jakarta.validation.constraints.Email;
 
 import jakarta.validation.constraints.NotEmpty;
