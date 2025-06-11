@@ -3,6 +3,7 @@ package com.axsosacademy.controllers;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.axsosacademy.models.Book;
 import com.axsosacademy.models.LoginUser;
 import com.axsosacademy.models.User;
-import com.axsosacademy.mvc.models.Travel;
 import com.axsosacademy.repositories.BookRepository;
 import com.axsosacademy.services.BookService;
 import com.axsosacademy.services.LogRegService;
