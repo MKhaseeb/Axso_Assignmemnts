@@ -8,3 +8,11 @@ java-stack/Java Spring/BookClub/.elasticbeanstalk/config.yml
 java-stack/Java Spring/BookClub/pom.xml
 java-stack/Java Spring/BookClub/src/main/resources/application.properties
 java-stack/Java Spring/BookClub/.elasticbeanstalk/app_versions/app-250612_094914898317-stage-250612_094914898317.zip
+# Ignore Python bytecode and cache
+*.pyc
+__pycache__/
+# Ignore virtual environments (if any)
+venv/
+.env/
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/

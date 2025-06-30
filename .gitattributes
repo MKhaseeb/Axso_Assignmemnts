@@ -1,0 +1,5 @@
+# Ignore compiled files and cache for language stats
+__pycache__/* linguist-vendored
+*.pyc linguist-vendored
+# Optionally ignore a whole directory from stats
+# python-stack/* linguist-vendored
