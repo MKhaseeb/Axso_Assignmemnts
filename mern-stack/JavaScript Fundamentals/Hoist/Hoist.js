@@ -1,40 +1,16 @@
-// var example
-// console.log(example);
-// example = "im the example!"
-
-
-// console.log(example);
-// var example = "im the example!"
-
 // ===================================1==========================================
 
-console.log(hello);
-var hello = 'world'
-
-//hoist
-
 var hello
-console.log(hello);
+console.log(hello); // undefined
 hello = 'world'
 
 // ===================================2==========================================
-
-var needle = 'haystack';
-
-test();
-
-function test() {
-    var needle = 'magnet';
-    console.log(needle);
-}
-
-//hoist
 
 var needle
 function test(){
     var needle
     needle = 'magnet';
-    console.log(needle);
+    console.log(needle); // magnet
 }
 needle = 'haystack';
 
@@ -42,147 +18,69 @@ test();
 
 // ===================================3==========================================
 
-var brendan = 'super cool';
-
-function print() {
-    brendan = 'only okay';
-    console.log(brendan);
-}
-
-console.log(brendan); 
-
-//hoist
-
 var brendan
 function print(){
     brendan = 'only okay';
-    console.log(brendan);
+    console.log(brendan); // not called
 }
 brendan = 'super cool'
-console.log(brendan); 
+console.log(brendan); // super cool
 
 // ===================================4==========================================
 
-var food = 'chicken';
-console.log(food);
-
-eat();
-
-function eat() {
-    var food = 'half-chicken';
-    console.log(food);
-    food = 'gone';
-}
-
-//hoist
-
 var food
-console.log(food)
+console.log(food); // undefined
 function eat(){
     var food
     food = 'half-chicken';
-    console.log(food);
+    console.log(food); // half-chicken
     food = 'gone';
 }
 food = 'chickem'
-console.log(food);
+console.log(food); // chickem
 eat();
 
 // ===================================5==========================================
 
-//not so sure
-
-mean();
-console.log(food);
-
-var mean = function() {
-    food = "chicken";
-    console.log(food);
-
-    var food = "fish";
-    console.log(food);
-}
-
-console.log(food);
-
-//hoist
-
 var mean
-console.log(food);
+console.log(food); // ReferenceError: food is not defined 
 mean = function(){
     var food
     food = "chicken";
-    console.log(food);
-    
+    console.log(food); // chicken
     food = "fish"
-    console.log(food);
+    console.log(food); // fish
 }
-console.log(food);
+console.log(food); // ReferenceError: food is not defined
 mean()
 
 // ===================================6==========================================
-
-console.log(genre);
-
-var genre = "disco";
-
-rewind();
-
-function rewind() {
-    genre = "rock";
-    console.log(genre);
-
-    var genre = "r&b";
-    console.log(genre);
-}
-
-console.log(genre);
-
-//hoist 
-
 
 var genre
 
 function rewind(){
     var genre
     genre = "rock";
-    console.log(genre);
+    console.log(genre); // rock
     genre = "r&b";
-    console.log(genre);
+    console.log(genre); // r&b
 }
-console.log(genre);
+console.log(genre); // undefined
 genre = "disco";
 rewind()
-console.log(genre);
+console.log(genre); // disco
 
 // ===================================7==========================================
-
-dojo = "san jose";
-console.log(dojo);
-
-learn();
-
-function learn() {
-    dojo = "seattle";
-    console.log(dojo);
-
-    var dojo = "burbank";
-    console.log(dojo);
-}
-
-console.log(dojo);
-
-//hoist
 
 var dojo
 function learn(){
     var dojo
     dojo = "seattle";
-    console.log(dojo);
+    console.log(dojo); // seattle
     dojo = "burbank";
-    console.log(dojo);
+    console.log(dojo); // burbank
 }
 dojo = "san jose"
-console.log(dojo);
+console.log(dojo); // san jose
 learn();
-console.log(dojo);
+console.log(dojo); // san jose
