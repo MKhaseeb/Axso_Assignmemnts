@@ -4,24 +4,24 @@ const cars = ['Tesla', 'Mercedes', 'Honda'];
 const [randomCar] = cars;
 const [, otherRandomCar] = cars;
 
-//Tesla
-//Mercedes
-console.log(randomCar);
-console.log(otherRandomCar);
+
+
+console.log(randomCar);//Tesla
+console.log(otherRandomCar);//Mercedes
 
 //====================2=========================
-// const employee = {
-//     name: 'Elon',
-//     age: 47,
-//     company: 'Tesla'
-// };
+const employee = {
+    name: 'Elon',
+    age: 47,
+    company: 'Tesla'
+};
 
-// const { name: otherName } = employee;
+const { name: otherName } = employee;
 
-// //Error: Elon is not defined
+//Error: Elon is not defined
 
-// console.log(name);
-// console.log(otherName);
+console.log(name);// not defined
+console.log(otherName); //Elon
 
 //====================3=========================
 const person = {
@@ -67,8 +67,9 @@ const { secondKey } = lastTest;
 const [, willThisWork] = secondKey;
 
 //value
+// [1, 5, 1, 8, 3, 3]
 //1
-//yes
+//5
 
 console.log(key);
 console.log(secondKey);
