@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CounterComponent = () => {
+const CounterComponent = ({firstname,lastname,haircolor}) => {
     const [count,setCount] = useState(0)
 
     const Addcounter = () => {
@@ -8,7 +8,9 @@ const CounterComponent = () => {
     }
     return(
         <>
-    <h1>{count}</h1>
+    <h1>{firstname}, {lastname} </h1>
+    <p>Age: {count}</p>
+    <p>Hair Color:{haircolor}</p>
     <button onClick={Addcounter}>Add</button>
     </>
     )

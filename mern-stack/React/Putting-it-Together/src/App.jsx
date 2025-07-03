@@ -5,11 +5,14 @@ import './App.css'
 import CounterComponent from './Components/CounterComponent'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    <CounterComponent/>
+      <CounterComponent firstname = "Mo" lastname = "Khaseeb" age = {18} haircolor = "Brown"/>
+      <CounterComponent firstname = "Mo" lastname = "Khaseeb" age = {18} haircolor = "Brown"/>
+      <CounterComponent firstname = "werwe" lastname = "werwerw" age = {228} haircolor = "egwgr"/>
+      <CounterComponent firstname = "Mo" lastname = "Khaseeb" age = {18} haircolor = "Brown"/>
+      <CounterComponent/>
     </>
   )
 }
