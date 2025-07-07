@@ -1,19 +1,47 @@
-java-stack/Java Spring/BookClub/.elasticbeanstalk/app_versions/app-250612_093049031572.zip
-java-stack/Java Spring/BookClub/.elasticbeanstalk/app_versions/app-250612_093223227815.zip
-java-stack/Java Spring/BookClub/.elasticbeanstalk/app_versions/app-250612_093638419492.zip
-java-stack/Java Spring/BookClub/.elasticbeanstalk/app_versions/app-250612_095608546846-stage-250612_095608546846.zip
-java-stack/Java Spring/BookClub/.elasticbeanstalk/app_versions/app-250612_100513526639.zip
-java-stack/Java Spring/BookClub/.elasticbeanstalk/app_versions/app-250612_101254396328.zip
+# Java Spring / Elastic Beanstalk artifacts
+java-stack/Java Spring/BookClub/.elasticbeanstalk/app_versions/
 java-stack/Java Spring/BookClub/.elasticbeanstalk/config.yml
+java-stack/Java Spring/BookClub/target/
 java-stack/Java Spring/BookClub/pom.xml
 java-stack/Java Spring/BookClub/src/main/resources/application.properties
-java-stack/Java Spring/BookClub/.elasticbeanstalk/app_versions/app-250612_094914898317-stage-250612_094914898317.zip
-# Ignore Python bytecode and cache
+
+# Python ignores
 *.pyc
 __pycache__/
-# Ignore virtual environments (if any)
 venv/
 .env/
-# Ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 python-stack/my_envs/
+
+# --- React + Vite ---
+
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vite cache and temporary files
+.vite/
+.vscode/
+
+# Editor directories and files
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
