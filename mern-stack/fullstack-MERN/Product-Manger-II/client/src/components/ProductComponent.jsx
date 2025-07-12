@@ -1,11 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-const PersonComponent = () => {
+const ProductComponent = () => {
     const [title, setTitle] = useState(""); 
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
+    const [product,setProduct] = useState([]);
+    
 
+
+        useEffect(() => {
+            fetchProdcut();
+        }, []);
+
+        
+    const fetchProdcut = () => {
+        axios.get('http://localhost:8000/api')
+            .then(res => {
+                setProduct(res.data);
+            })
+            .catch(err => console.error("Error fetching people:", err));
+    };
 
     const onSubmitHandler = e => {
         e.preventDefault();
@@ -15,13 +31,14 @@ const PersonComponent = () => {
             description
         })
         .then(res => {
-            console.log("Person added:", res.data);
+            console.log("Product added:", res.data);
             setTitle("");
             setPrice("");
             setDescription("");
         })
         .catch(err => console.log(err));
     };
+
 
     return (
         <>
@@ -40,8 +57,17 @@ const PersonComponent = () => {
                 </p>
                 <input type="submit" value="Add Product"/>
             </form>
+
+            <h3>Product List:</h3>
+            <ul>
+                {product.map((product, index) => (
+                    <li key={index}>
+                        <Link to={`/product/${product._id}`}>{product.title}</Link>
+                    </li>
+                ))}
+            </ul>
         </>
     );
 };
 
-export default PersonComponent;
+export default ProductComponent;

@@ -1,10 +1,19 @@
 
 import './App.css'
-import PersonComponent from './components/ProductComponent'
+import ProductIDCompnenet from './components/ProductIDComponent'
+import ProductComponent from './components/ProductComponent'
+import {
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 function App() {
   return (
     <>
-    <PersonComponent/>
+    <Routes>
+    <Route element={<ProductComponent/>} path='/product/'/>
+    <Route element={<ProductIDCompnenet/>} path="/product/:id" />
+    </Routes>
     </>
   )
 }
