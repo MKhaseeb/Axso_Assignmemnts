@@ -11,6 +11,7 @@ const TabsComponent = ({ tabs }) => {
         <div>
             <div>
                 {tabs.map((item, index) => (
+                    
                     <button
                         key={index}
                         onClick={() => onClickHandler(index)}

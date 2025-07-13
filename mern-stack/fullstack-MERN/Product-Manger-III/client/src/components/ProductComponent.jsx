@@ -19,6 +19,7 @@ const ProductComponent = () => {
         axios.get('http://localhost:8000/api')
             .then(res => {
                 setProduct(res.data);
+                console.log(res);
             })
             .catch(err => console.error("Error fetching people:", err));
     };

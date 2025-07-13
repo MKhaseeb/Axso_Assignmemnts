@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const CounterComponent = ({firstname,lastname,haircolor}) => {
-    const [count,setCount] = useState(0)
+const CounterComponent = ({firstname,lastname,haircolor,age}) => {
+    const [count,setCount] = useState(age)
 
     const Addcounter = () => {
         setCount(count + 1)
