@@ -9,7 +9,6 @@ const LoginComponent = () => {
     const nav = useNavigate()
 
     const handelSubmint = (e) => {
-        const errorArr = [];
         e.preventDefault()
 
         const payload = {
@@ -25,16 +24,21 @@ const LoginComponent = () => {
                 nav('/')
             })
             .catch(err => {
-                const errorResponse = err.response.data.errors;
-                for (const key of Object.keys(errorResponse)) {
-                    errorArr.push(errorResponse[key].message)
+                const errorArr = [];
+                const errorResponse = err?.response?.data?.errors;
+
+                if (errorResponse) {
+                    for (const key of Object.keys(errorResponse)) {
+                        errorArr.push(errorResponse[key].message);
+                    }
+                } else {
+                    errorArr.push(err?.response?.data?.message);
                 }
+
                 setErrors(errorArr);
                 console.log(errorArr);
-                console.log(errorResponse)
-
-
             })
+
     }
     return (
         <form onSubmit={handelSubmint}>

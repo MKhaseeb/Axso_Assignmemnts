@@ -1,6 +1,4 @@
 import { React, useState } from "react";
-import close from "../assets/close.png";
-import menu from "../assets/menu.png";
 import Logo from "../assets/logo-white.svg";
 import {
     CiLogin,
@@ -17,8 +15,12 @@ import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import BoxsComponent from "./BoxsComponent";
 import SocialComponent from "./SocialComponent";
-import { FaFacebookF ,FaTwitter, FaGooglePlusG   } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaGooglePlusG } from "react-icons/fa";
 import RatingComponent from "./RatingComponent";
+import { Link } from "react-router-dom";
+import UsersComponent from "./usersComponent";
+import NavComponent from "./NavComponent";
+
 const SidenavComponenet = () => {
     const [toggleNav, setToggleNav] = useState(false);
     const [toggleLevel, setToggleLevel] = useState(false);
@@ -30,15 +32,14 @@ const SidenavComponenet = () => {
     return (
         <>
             <div>
-                <img
-                    className={`w-[25px] h-[25px] absolute top-10 z-[10] cursor-pointer ${toggleNav ? "left-70" : "left-5"
-                        }`}
-                    onClick={handeltoggel}
-                    src={toggleNav ? close : menu}
-                />
+                <Link to={"/"}></Link>
+            </div>
+            <div>
                 {toggleNav && (
                     <aside
-                        class="w-80 text-white h-screen fixed top-0 left-0 overflow-y-auto "
+                        className={`w-80 text-white h-screen fixed top-0 left-0 overflow-y-auto z-60
+                            transform transition-transform duration-800 ease-in-out
+                            ${toggleNav ? "translate-x-0" : "-translate-x-full"}`}
                         style={{ backgroundColor: "#3f4d67" }}
                     >
                         <nav class="p-4 ">
@@ -89,19 +90,22 @@ const SidenavComponenet = () => {
                             <h6 style={{ fontSize: "11px" }}>PAGES</h6>
                             <ul>
                                 <li class="mb-2">
-                                    <a
-                                        href="#"
+                                    <Link
                                         className="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-700"
+                                        to={"/login"}
                                     >
                                         <CiLock /> <span>Login</span>
-                                    </a>
+                                    </Link>
                                 </li>
-                                <a
-                                    href="#"
-                                    className="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-700"
-                                >
-                                    <AiOutlineUserAdd /> <span>Register</span>
-                                </a>
+                                <li class="mb-2">
+                                    <Link
+                                        className="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-700"
+                                        to={"/register"}
+                                    >
+                                        <AiOutlineUserAdd />
+                                        <span>Register</span>
+                                    </Link>
+                                </li>
                             </ul>
                             <h6 style={{ fontSize: "11px" }}>PAGES</h6>
                             <ul>
@@ -186,9 +190,23 @@ const SidenavComponenet = () => {
                     </aside>
                 )}
             </div>
-            <div className={`p-4 ${toggleNav ? "ml-80" : "ml-16"}`}>
-                <div className="flex w-full gap-4">
-                    <div className="w-1/3">
+            <div
+                className={`p-4 transition-all duration-300 ${toggleNav ? "ml-80" : "ml-16"
+                    }`}
+            >
+                <NavComponent toggleNav={toggleNav} handeltoggel={handeltoggel} />
+                <div className="font-thin p-4">
+                    <h1 className="font-medium ">Default</h1>
+                    <p className="flex items-center text-gray-500 gap-2 text-sm">
+                        <a href="/" className="hover:text-blue-600">Home</a>
+                        <span>&gt;</span>
+                        <a href="/dashboard" className="hover:text-blue-600">Dashboard</a>
+                        <span>&gt;</span>
+                        <p>Default</p>
+                    </p>
+                </div>
+                <div className="grid grid-cols-3 gap-3 p-2">
+                    <div>
                         <BoxsComponent
                             toggleNav={toggleNav}
                             title="Daily Sales"
@@ -198,8 +216,7 @@ const SidenavComponenet = () => {
                             Icon={FaArrowUp}
                         />
                     </div>
-
-                    <div className="w-1/3">
+                    <div>
                         <BoxsComponent
                             toggleNav={toggleNav}
                             title="Monthly Sales"
@@ -209,8 +226,7 @@ const SidenavComponenet = () => {
                             Icon={FaArrowDown}
                         />
                     </div>
-
-                    <div className="w-1/3">
+                    <div>
                         <BoxsComponent
                             toggleNav={toggleNav}
                             title="Yearly Sales"
@@ -220,73 +236,70 @@ const SidenavComponenet = () => {
                             Icon={FaArrowUp}
                         />
                     </div>
-                </div>
-            </div>
-            <div className={`p-4 ${toggleNav ? "ml-80" : "ml-16"}`}>
-                <div className="flex w-full gap-4">
-                    <div className="w-1/3">
+
+                    <div>
                         <SocialComponent
                             toggleNav={toggleNav}
-                            target={"35" + "," + "098"}
+                            target={"35,098"}
                             duration={"350"}
                             addsStatus={"+7.2%"}
                             statusColor={"#A7F3D0"}
                             amount="12,281"
                             progress={90}
                             progress2={32}
-                            gradient1 = {"#3B82F6"}
-                            gradient2 = {"#10B981"}
-                            gradient3 = {"#6446ecff"}
-                            gradient4 = {"#a1b7e7ff"}
+                            gradient1={"#3B82F6"}
+                            gradient2={"#10B981"}
+                            gradient3={"#6446ecff"}
+                            gradient4={"#a1b7e7ff"}
                             iconColor="#0d679bff"
                             Icon={FaFacebookF}
                         />
                     </div>
-                    <div className="w-1/3">
+                    <div>
                         <SocialComponent
                             toggleNav={toggleNav}
-                            target={"34" + "," + "185"}
+                            target={"34,185"}
                             duration={"800"}
                             addsStatus={"+6.2%"}
                             statusColor={"#9b4cf5ff"}
                             amount="11,200"
                             progress={90}
                             progress2={32}
-                            gradient1 = {"#10B981"}
-                            gradient2 = {"#10B981"}
-                            gradient3 = {"#579ff1ff"}
-                            gradient4 = {"#579ff1ff"}
-
+                            gradient1={"#10B981"}
+                            gradient2={"#10B981"}
+                            gradient3={"#579ff1ff"}
+                            gradient4={"#579ff1ff"}
                             iconColor="#3da0daff"
                             Icon={FaTwitter}
                         />
                     </div>
-                    <div className="w-1/3">
+                    <div>
                         <SocialComponent
                             toggleNav={toggleNav}
-                            target={"25" + "," + "998"}
+                            target={"25,998"}
                             duration={"900"}
                             addsStatus={"+5.9%"}
                             statusColor={"#9b4cf5ff"}
                             amount="10,500"
                             progress={90}
                             progress2={32}
-                            gradient1 = ""
-                            gradient2 = ""
-                            gradient3 = ""
-                            gradient4 = ""
-
+                            gradient1={"#3B82F6"}
+                            gradient2={"#10B981"}
+                            gradient3={"#6446ecff"}
+                            gradient4={"#a1b7e7ff"}
                             iconColor="#d35a2aff"
-                            Icon={FaGooglePlusG }
+                            Icon={FaGooglePlusG}
                         />
                     </div>
-                </div>
-            <div className="w-4/10"> 
-            
-            <RatingComponent/>
-            </div>
-            </div>
 
+                    <div className="col-span-1">
+                        <RatingComponent />
+                    </div>
+                    <div className="col-span-2">
+                        <UsersComponent />
+                    </div>
+                </div>
+            </div>
         </>
     );
 };

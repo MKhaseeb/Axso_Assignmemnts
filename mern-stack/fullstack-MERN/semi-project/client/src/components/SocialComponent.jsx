@@ -16,7 +16,7 @@ const SocialComponent = ({
     gradient4,
 }) => {
     return (
-        <div className="relative flex flex-col mb-4 bg-white shadow-sm border border-slate-200 rounded-lg w-full">
+        <div className="relative flex flex-col mb-4 bg-white shadow-sm border border-slate-200  w-full">
             <div className="p-4">
                 <div className="flex items-center justify-between text-[30px]  mb-4">
                     {Icon && <Icon style={{ color: iconColor }} />}
@@ -33,24 +33,24 @@ const SocialComponent = ({
                 <div className="flex gap-4">
                     <div className="flex flex-col items-center w-[45%]">
                         <p className="mb-2 text-gray-500">Target: {target}</p>
-                        <div className="bg-gray-200 rounded-full h-2.5 dark:bg-white-700 w-full">
+                        <div className="bg-gray-200 rounded-full h-1.5 dark:bg-white-700 w-full">
                             <div
-                                className="h-2.5 rounded-full"
+                                className="h-1.5 rounded-full"
                                 style={{
                                     background: `linear-gradient(to right, ${gradient1}, ${gradient2})`,
-                                    width: `${progress}%`,
+                                    width: `${progress}%`, boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)' 
                                 }}
                             ></div>
                         </div>
                     </div>
                     <div className="flex flex-col items-center w-[45%]">
                         <p className="mb-2 text-gray-500">Duration: {duration}</p>
-                        <div className="bg-gray-200 rounded-full h-2.5 dark:bg-white-700 w-full">
+                        <div className="bg-gray-200 rounded-full h-1.5 dark:bg-white-700 w-full">
                             <div
-                                className="h-2.5 rounded-full"
+                                className="h-1.5 rounded-full"
                                 style={{
                                     background: `linear-gradient(to right, ${gradient3}, ${gradient4})`,
-                                    width: `${progress2}%`,
+                                    width: `${progress2}%`, boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)' 
                                 }}
                             ></div>
                         </div>

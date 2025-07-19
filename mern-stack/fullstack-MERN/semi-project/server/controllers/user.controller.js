@@ -1,5 +1,6 @@
 const { User } = require('../models/user.model');
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 
 
 module.exports = {
@@ -18,12 +19,15 @@ module.exports = {
                 }, process.env.SECRET_KEY);
 
                 res
-                    .cookie("usertoken", userToken, secret, {
+                    .cookie("usertoken", userToken, {
                         httpOnly: true
                     })
                     .json({ msg: "success!", user: user });
             })
-            .catch(err => res.json(err));
+                    .catch(err => {
+                        console.log(err);
+                        res.status(400).json({ errors: err.errors });
+    });
     },
 
     login: async (req, res) => {
@@ -31,7 +35,7 @@ module.exports = {
 
         if (user === null) {
             // email not found in users collection
-            return res.sendStatus(400);
+            return res.status(400).json({ message: "Invalid email or password" });
         }
 
         // if we made it this far, we found a user with this email address
@@ -40,7 +44,7 @@ module.exports = {
 
         if (!correctPassword) {
             // password wasn't a match!
-            return res.sendStatus(400);
+            return res.status(400).json({ message: "Invalid email or password" });
         }
 
         // if we made it this far, the password was correct
@@ -50,7 +54,7 @@ module.exports = {
 
         // note that the response object allows chained calls to cookie and json
         res
-            .cookie("usertoken", userToken, secret, {
+            .cookie("usertoken", userToken, {
                 httpOnly: true
             })
             .json({ msg: "success!" });

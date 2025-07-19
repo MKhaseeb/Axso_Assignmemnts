@@ -12,20 +12,19 @@ const RegisterComponent = () => {
     const nav = useNavigate()
 
     const handelSubmint = (e) => {
-        const errorArr = [];
         e.preventDefault()
 
-         const payload = {
-        firstName,
-        lastName,
-        email,
-        password,
-        confirmPassword
-    };
+        const payload = {
+            firstName,
+            lastName,
+            email,
+            password,
+            confirmPassword
+        };
 
         axios.post('http://localhost:8000/api/register', payload, { withCredentials: true })
             .then(res => {
-                console.log( res.data);
+                console.log(res.data);
                 setFirstName("");
                 setLastName("");
                 setEmail("");
@@ -33,16 +32,23 @@ const RegisterComponent = () => {
                 nav('/')
             })
             .catch(err => {
-                const errorResponse = err.response.data.errors;
-                for (const key of Object.keys(errorResponse)) {
-                    errorArr.push(errorResponse[key].message)
+                const errorArr = [];
+                const errorResponse = err?.response?.data?.errors;
+                const message = err?.response?.data?.message;
+
+                if (errorResponse) {
+                    for (const key of Object.keys(errorResponse)) {
+                        errorArr.push(errorResponse[key].message);
+                    }
+                } else if (message) {
+                    errorArr.push(message);
+                } else {
+                    errorArr.push("An unexpected error occurred");
                 }
+
                 setErrors(errorArr);
-                console.log(errorArr);
-                console.log(errorResponse)
-
-
-            })
+                console.log("Error response:", err.response?.data);
+            });
 
 
 
@@ -56,7 +62,7 @@ const RegisterComponent = () => {
                 <label>First name: </label><br />
                 <input type="text" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
             </p>
-            
+
             <p>
                 <label>Last name: </label><br />
                 <input type="text" onChange={(e) => setLastName(e.target.value)} value={lastName} />
