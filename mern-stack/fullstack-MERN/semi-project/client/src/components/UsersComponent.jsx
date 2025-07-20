@@ -1,22 +1,11 @@
-import { React, useEffect, useState } from 'react'
-import axios from 'axios';
+// import { React, useEffect, useState } from 'react'
+// import axios from 'axios';
 import pfp from "../assets/avatar-1.jpg";
+import useFeatchUser from '../hooks/useFeatchUser';
 
 const UsersComponent = () => {
-    const [users, setUsers] = useState([]);
+   const {users} = useFeatchUser()
 
-    useEffect(() => {
-        fetchUsers();
-    }, []);
-
-    const fetchUsers = () => {
-        axios.get('http://localhost:8000/api')
-            .then(res => {
-                setUsers(res.data);
-                setUsers.log(res);
-            })
-            .catch(err => console.error("Error fetching users:", err));
-    };
     return (
 <div className="relative flex flex-col mb-4 bg-white shadow-sm border border-slate-200  max-w-auto w-full">
                         <div className="p-4">

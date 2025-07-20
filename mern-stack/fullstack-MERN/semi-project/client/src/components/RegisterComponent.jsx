@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import useFeatchUser from '../hooks/useFeatchUser';
 
 const RegisterComponent = () => {
     const [firstName, setFirstName] = useState("")
@@ -10,7 +11,7 @@ const RegisterComponent = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState([])
     const nav = useNavigate()
-
+    const {users} = useFeatchUser()
     const handelSubmint = (e) => {
         e.preventDefault()
 
@@ -55,6 +56,7 @@ const RegisterComponent = () => {
     }
 
     return (
+        <>
         <form onSubmit={handelSubmint}>
             {errors.map((err, index) => <p key={index}>{err}</p>)}
 
@@ -85,6 +87,24 @@ const RegisterComponent = () => {
 
 
         </form>
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Actions Available</th>
+    </tr>
+  </thead>
+  <tbody>
+    {users.map((user, index) => (
+      <tr key={index}>
+        <td>{user.firstName}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+</>
+
+
     )
 }
 
